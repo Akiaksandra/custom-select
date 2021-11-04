@@ -4,7 +4,6 @@ const createDataList = (patentNode, data, inputValue, selectedItems) => {
   patentNode.innerHTML = "";
   if (inputValue) {
     const filterData = data.filter((el) => el.title.includes(inputValue));
-    console.log(filterData);
     if (filterData.length === 0) {
       const newItem = createListItem({
         title: "Ничего не найдено",
