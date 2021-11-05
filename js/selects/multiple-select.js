@@ -3,8 +3,8 @@ import createDataList from "../functions/createDataList.js";
 
 const multiSelect = () => {
   document.addEventListener("DOMContentLoaded", () => {
-    const input = container.querySelector(".multiple-select__input");
     const container = document.querySelector(".multiple-select__container");
+    const input = container.querySelector(".multiple-select__input");
     const selectList = document.querySelector(".multiple-select__list");
     const selectedList = container.querySelector(".selected__list");
     const selectListCross = container.querySelector(".multiple-select__cross");
