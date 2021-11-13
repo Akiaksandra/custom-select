@@ -15,32 +15,15 @@
   </head>
   <body>
     <div id="app">
-      <div class="single-select">
-        <div class="input__container">
-          <label class="input__arrow"
-            ><i class="fas fa-chevron-down"></i
-          ></label>
-          <input
-            type="text"
-            class="input"
-            placeholder="Выберите значение или воспользуйтесь поиском"
-          />
-          <span class="selected__item-text"></span>
-        </div>
-        <ul class="select__list hide"></ul>
-      </div>
-
-      <div class="multiple-select">
-        <div class="multiple-select__container">
-          <div class="selected__list"></div>
-          <input type="text" size="1" class="multiple-select__input" />
-          <label class="multiple-select__cross"
-            ><i class="fas fa-times"></i>
-          </label>
-        </div>
-        <ul class="multiple-select__list hide"></ul>
-      </div>
+      <div>Simple select</div>
+      <div id="single-select"></div>
+      <div>Multiple select</div>
+      <div id="multiple-select"></div>
+      <div>Multiple select with selected items</div>
+      <div id="multiple-select2"></div>
+      <div><button class="save-button">Посмотреть результаты</button></div>
     </div>
+
     <script type="module" src="js/app.js"></script>
   </body>
 </html>

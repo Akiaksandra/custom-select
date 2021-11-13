@@ -1,10 +1,20 @@
 * {
   box-sizing: border-box;
+  margin: 0;
 }
-.single-select {
+body {
+  min-width: 100vw;
+  min-height: 100vh;
+}
+#app {
+  padding: 10px;
+  width: 100%;
+  height: 100%;
+}
+.select__wrapper {
   position: relative;
   width: 100%;
-  max-width: 350px;
+  max-width: 400px;
   margin-bottom: 10px;
 }
 
@@ -24,31 +34,11 @@
   position: relative;
 }
 
-.input__arrow {
-  position: absolute;
-  right: 10px;
-  bottom: 50%;
-  width: 24px;
-  height: 24px;
-  transform: translateY(50%);
-  display: block;
-  transition: 0.2s ease-in;
-  z-index: 3;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.input__arrow.open {
-  transform: translateY(50%) rotate(180deg);
-}
-
-.hide {
+.hide .select__list {
   display: none;
 }
 
-.select__list,
-.multiple-select__list {
+.select__list {
   position: absolute;
   top: 100%;
   left: 0;
@@ -79,11 +69,7 @@
   background-color: lightblue;
 }
 
-.multiple-select {
-  position: relative;
-  max-width: 400px;
-}
-.multiple-select__container {
+.select__container {
   position: relative;
   display: flex;
   flex-direction: row;
@@ -103,7 +89,7 @@
   max-width: 100%;
 }
 
-.multiple-select__cross {
+.select__input-cross {
   position: absolute;
   right: 10px;
   bottom: 50%;
@@ -117,15 +103,15 @@
   justify-content: center;
 }
 
-.multiple-select__cross {
+.select__input-cross {
   color: rgb(187, 189, 196);
 }
 
-.multiple-select__cross:hover {
+.select__input-cross:hover {
   color: rgb(20, 20, 20);
 }
 
-.select__cross {
+.selected__cross {
   font-size: 12px;
   padding: 5px;
   display: flex;
@@ -164,7 +150,7 @@
   text-overflow: ellipsis;
 }
 
-.multiple-select__input {
+.select__input {
   min-width: 2px;
   outline: none;
   border: none;
