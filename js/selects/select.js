@@ -15,8 +15,10 @@ export class Select {
     this.selectedItems = this.options.selectedItems
       ? [...this.options.selectedItems]
       : [];
+    this.isAutocomplete = this.options.isAutocomplete || false;
     this.isMultuple = this.options.isMultuple || false;
     this.data = this.options.data || [];
+    this.placeholder = this.options.placeholder || DEFAULT_PLACEHOLDER;
 
     this.selector = selector;
     this.$el = document.querySelector(this.selector);
@@ -28,7 +30,7 @@ export class Select {
   #render = () => {
     this.$el.classList.add("select__wrapper");
     this.$el.classList.add(DEFAULT_CLASSES.hide);
-    this.$el.innerHTML = getHMTL();
+    this.$el.innerHTML = getHMTL(this.placeholder);
 
     this.$selectContainer = this.$el.querySelector(
       `.${DEFAULT_CLASSES.selectContainer}`
@@ -37,6 +39,7 @@ export class Select {
       `.${DEFAULT_CLASSES.selectedList}`
     );
     this.$input = this.$el.querySelector(`.${DEFAULT_CLASSES.selectInput}`);
+    !this.isAutocomplete && this.$input.setAttribute("disabled", "disabled");
     this.$selectList = this.$el.querySelector(`.${DEFAULT_CLASSES.selectList}`);
     this.#update();
   };
@@ -49,14 +52,15 @@ export class Select {
           this.selectItem(e);
         }
         if (e.target.closest(`.${DEFAULT_CLASSES.selectedCross}`)) {
+          const targetEl = e.target.closest(`.${DEFAULT_CLASSES.selectedItem}`);
           const newElem = {
-            id: e.target.dataset.id,
-            title: e.target.innerHTML,
+            id: targetEl.dataset.id,
           };
           const currentElemIndex = findElementIndex(
             newElem,
             this.selectedItems
           );
+
           this.deleteSelectedItem(currentElemIndex);
           this.#update();
         }
@@ -69,14 +73,15 @@ export class Select {
       }
     });
 
-    this.$input.addEventListener("input", () => {
-      createDataList(
-        this.$selectList,
-        this.data,
-        this.$input.value,
-        this.selectedItems
-      );
-    });
+    this.isAutocomplete &&
+      this.$input.addEventListener("input", () => {
+        createDataList(
+          this.$selectList,
+          this.data,
+          this.$input.value,
+          this.selectedItems
+        );
+      });
   };
 
   #update = () => {
@@ -93,7 +98,7 @@ export class Select {
   toggleInputPlaceholder = () => {
     this.selectedItems.length
       ? (this.$input.placeholder = "")
-      : (this.$input.placeholder = DEFAULT_PLACEHOLDER);
+      : (this.$input.placeholder = this.placeholder);
   };
 
   addSelectedItem = (newElem) => {
@@ -112,7 +117,7 @@ export class Select {
     if (targetEl && targetEl.dataset.id !== "null") {
       const newElem = {
         id: targetEl.dataset.id,
-        title: targetEl.innerHTML,
+        title: targetEl.dataset.value,
       };
       const currentElemIndex = findElementIndex(newElem, this.selectedItems);
       if (currentElemIndex === -1) {

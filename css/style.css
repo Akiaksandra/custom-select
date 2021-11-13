@@ -24,16 +24,6 @@ body {
   max-width: 400px;
 }
 
-.input {
-  width: 100%;
-  padding: 10px 35px 10px 15px;
-  margin: 0;
-  outline: none;
-  border: 1px solid #becccc;
-  border-radius: 5px;
-  position: relative;
-}
-
 .hide .select__list {
   display: none;
 }
@@ -109,6 +99,7 @@ body {
 
 .select__input-cross:hover {
   color: rgb(20, 20, 20);
+  cursor: pointer;
 }
 
 .selected__cross {
@@ -116,6 +107,7 @@ body {
   padding: 5px;
   display: flex;
   align-items: center;
+  cursor: pointer;
 }
 
 .selected__item {
@@ -158,6 +150,10 @@ body {
   flex-shrink: 20;
   flex-grow: 10;
   margin-bottom: 5px;
+}
+
+.select__input:disabled {
+  background-color: transparent;
 }
 
 .selected {

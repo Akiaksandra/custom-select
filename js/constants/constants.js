@@ -7,6 +7,7 @@ export const DEFAULT_CLASSES = {
   selectItem: "select__item",
   selectedCross: "selected__cross",
   selectInputCross: "select__input-cross",
+  selectedItem: 'selected__item',
   hide: "hide",
 };
 export const DEFAULT_PLACEHOLDER = "Введите значение или выберите из списка";
