@@ -1,4 +1,4 @@
-export const getHMTL = (placeholder) => {
+export const getHTML = (placeholder) => {
   return `
   <div class="select__container">
     <div class="selected__list"></div>
@@ -14,8 +14,8 @@ export const findElementIndex = (element, selectedItems) => {
   return selectedItems.findIndex((el) => el.id === element.id);
 };
 
-export const createSelectedListItem = (element, isMultuple) => {
-  if (isMultuple) {
+export const createSelectedListItem = (element, isMultiple) => {
+  if (isMultiple) {
     const div = document.createElement("div");
     div.classList.add("selected__item");
     div.dataset.id = element.id;

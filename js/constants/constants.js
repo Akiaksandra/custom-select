@@ -9,5 +9,7 @@ export const DEFAULT_CLASSES = {
   selectInputCross: "select__input-cross",
   selectedItem: 'selected__item',
   hide: "hide",
+  selectListToTop: ".select__list--to-top",
+  selectListToBottom: "select__list--to-bottom",
 };
-export const DEFAULT_PLACEHOLDER = "Введите значение или выберите из списка";
+

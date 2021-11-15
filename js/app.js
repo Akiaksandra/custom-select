@@ -4,29 +4,30 @@ import { Select } from "./selects/select.js";
 const singleSelect = new Select("#single-select", {
   data: data,
   placeholder: "Выберите значение из списка",
+  isAutoClose: true,
 });
 const multipleSelect = new Select("#multiple-select", {
   data: data,
-  isMultuple: true,
+  isMultiple: true,
   placeholder: "Выберите значение из списка",
 });
-const singleSelectWithAutocompete = new Select("#single-select-autocopmlete", {
+const singleSelectWithAutocomplete = new Select("#single-select-autocomplete", {
   data: data,
   isAutocomplete: true,
 });
-const multipleSelectWithAutocompete = new Select(
-  "#multiple-select-autocopmlete",
+const multipleSelectWithAutocomplete = new Select(
+  "#multiple-select-autocomplete",
   {
     data: data,
-    isMultuple: true,
+    isMultiple: true,
     isAutocomplete: true,
   }
 );
-const multipleSelectWithAutocompeteSelected = new Select(
-  "#multiple-select-autocopmlete-selected",
+const multipleSelectWithAutocompleteSelected = new Select(
+  "#multiple-select-autocomplete-selected",
   {
     data: data,
-    isMultuple: true,
+    isMultiple: true,
     isAutocomplete: true,
     selectedItems: [
       {
@@ -47,12 +48,12 @@ button.addEventListener("click", (e) => {
   console.log(multipleSelect.selectedItems);
   console.groupEnd();
   console.group("Выбранные позиции в третьем select: ");
-  console.log(singleSelectWithAutocompete.selectedItems);
+  console.log(singleSelectWithAutocomplete.selectedItems);
   console.groupEnd();
   console.group("Выбранные позиции в четвертом select: ");
-  console.log(multipleSelectWithAutocompete.selectedItems);
+  console.log(multipleSelectWithAutocomplete.selectedItems);
   console.groupEnd();
   console.group("Выбранные позиции в пятом select: ");
-  console.log(multipleSelectWithAutocompeteSelected.selectedItems);
+  console.log(multipleSelectWithAutocompleteSelected.selectedItems);
   console.groupEnd();
 });

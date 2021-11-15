@@ -1,171 +1,179 @@
 * {
-  box-sizing: border-box;
-  margin: 0;
+    box-sizing: border-box;
+    margin: 0;
 }
+
 body {
-  min-width: 100vw;
-  min-height: 100vh;
+    min-width: 100vw;
+    min-height: 100vh;
 }
+
 #app {
-  padding: 10px;
-  width: 100%;
-  height: 100%;
+    padding: 10px;
+    width: 100%;
+    height: 100%;
 }
+
 .select__wrapper {
-  position: relative;
-  width: 100%;
-  max-width: 400px;
-  margin-bottom: 10px;
+    position: relative;
+    width: 100%;
+    max-width: 400px;
+    margin-bottom: 10px;
 }
 
 .input__container {
-  position: relative;
-  width: 100%;
-  max-width: 400px;
+    position: relative;
+    width: 100%;
+    max-width: 400px;
 }
 
 .hide .select__list {
-  display: none;
+    display: none;
 }
 
 .select__list {
-  position: absolute;
-  top: 100%;
-  left: 0;
-  right: 0;
-  background: #fff;
-  box-shadow: 0 0 4px rgba(0, 0, 0, 0.2);
-  border-radius: 10px;
-  margin-top: 5px;
-  max-height: 200px;
-  overflow-x: hidden;
-  overflow-y: auto;
-  z-index: 100;
-  margin: 0;
-  padding: 0;
-  font-size: 14px;
-  color: #424348;
+    position: absolute;
+    left: 0;
+    right: 0;
+    background: #fff;
+    box-shadow: 0 0 4px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    max-height: 200px;
+    overflow-x: hidden;
+    overflow-y: auto;
+    z-index: 100;
+    margin: 0;
+    padding: 0;
+    font-size: 14px;
+    color: #424348;
+}
+
+.select__list--to-top {
+    bottom: 100%;
+}
+
+.select__list--to-bottom {
+    top: 100%;
 }
 
 .select__item {
-  position: relative;
-  border-top: 1px solid rgba(224, 229, 231, 0.5);
-  padding: 10px 15px;
-  cursor: pointer;
-  list-style-type: none;
+    position: relative;
+    border-top: 1px solid rgba(224, 229, 231, 0.5);
+    padding: 10px 15px;
+    cursor: pointer;
+    list-style-type: none;
 }
 
 .select__item:hover {
-  background-color: lightblue;
+    background-color: lightblue;
 }
 
 .select__container {
-  position: relative;
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  width: 400px;
-  padding: 5px 35px 0 10px;
-  margin: 0;
-  border: 1px solid #becccc;
-  border-radius: 5px;
-  min-height: 40px;
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 400px;
+    padding: 5px 35px 0 10px;
+    margin: 0;
+    border: 1px solid #becccc;
+    border-radius: 5px;
+    min-height: 40px;
 }
 
 .selected__list {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  max-width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    max-width: 100%;
 }
 
 .select__input-cross {
-  position: absolute;
-  right: 10px;
-  bottom: 50%;
-  width: 24px;
-  height: 24px;
-  transform: translateY(50%);
-  display: block;
-  z-index: 3;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+    position: absolute;
+    right: 10px;
+    bottom: 50%;
+    width: 24px;
+    height: 24px;
+    transform: translateY(50%);
+    z-index: 3;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .select__input-cross {
-  color: rgb(187, 189, 196);
+    color: rgb(187, 189, 196);
 }
 
 .select__input-cross:hover {
-  color: rgb(20, 20, 20);
-  cursor: pointer;
+    color: rgb(20, 20, 20);
+    cursor: pointer;
 }
 
 .selected__cross {
-  font-size: 12px;
-  padding: 5px;
-  display: flex;
-  align-items: center;
-  cursor: pointer;
+    font-size: 12px;
+    padding: 5px;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
 }
 
 .selected__item {
-  margin-bottom: 5px;
-  padding-left: 5px;
-  background-color: rgb(225, 229, 233);
-  max-width: 100px;
-  display: flex;
-  flex-direction: row;
-  flex-wrap: nowrap;
-  margin-right: 5px;
-  align-items: center;
-  min-height: 28px;
+    margin-bottom: 5px;
+    padding-left: 5px;
+    background-color: rgb(225, 229, 233);
+    max-width: 100px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    margin-right: 5px;
+    align-items: center;
+    min-height: 28px;
 }
 
 .selected__item-text {
-  position: absolute;
-  left: 15px;
-  right: 35px;
-  top: 50%;
-  transform: translateY(-50%);
-  max-height: 16px;
-  overflow: hidden;
-  font-size: 14px;
-  font-family: Arial, Helvetica, sans-serif;
+    position: absolute;
+    left: 15px;
+    right: 35px;
+    top: 50%;
+    transform: translateY(-50%);
+    max-height: 16px;
+    overflow: hidden;
+    font-size: 14px;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 .selected__text {
-  max-width: 90px;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
+    max-width: 90px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 .select__input {
-  min-width: 2px;
-  outline: none;
-  border: none;
-  max-width: 100%;
-  flex-shrink: 20;
-  flex-grow: 10;
-  margin-bottom: 5px;
+    min-width: 2px;
+    outline: none;
+    border: none;
+    max-width: 100%;
+    flex-shrink: 20;
+    flex-grow: 10;
+    margin-bottom: 5px;
 }
 
 .select__input:disabled {
-  background-color: transparent;
+    background-color: transparent;
 }
 
 .selected {
-  background-color: #b9b9b9;
+    background-color: #b9b9b9;
 }
 
 .selected::after {
-  content: "\2713";
-  width: 10px;
-  height: 10px;
-  position: absolute;
-  top: 45%;
-  right: 10px;
-  transform: translateY(-50%);
+    content: "\2713";
+    width: 10px;
+    height: 10px;
+    position: absolute;
+    top: 45%;
+    right: 10px;
+    transform: translateY(-50%);
 }
