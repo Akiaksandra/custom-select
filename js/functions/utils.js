@@ -2,7 +2,7 @@ export const getHTML = (placeholder) => {
   return `
   <div class="select__container">
     <div class="selected__list"></div>
-    <input type="text" size="1" class="select__input" placeholder=${placeholder}/>
+    <input type="text" size="1" class="select__input" placeholder="${placeholder}"/>
     <label class="select__input-cross"
       ><i class="fas fa-times"></i>
     </label>

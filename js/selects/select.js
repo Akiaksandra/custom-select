@@ -38,7 +38,7 @@ export class Select {
       `.${DEFAULT_CLASSES.selectedList}`
     );
     this.$input = this.$el.querySelector(`.${DEFAULT_CLASSES.selectInput}`);
-    !this.isAutocomplete && this.$input.setAttribute("disabled", "disabled");
+    !this.isAutocomplete && this.$input.setAttribute("readonly", "readonly");
     this.$selectList = this.$el.querySelector(`.${DEFAULT_CLASSES.selectList}`);
     this.update();
   };
