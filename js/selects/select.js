@@ -70,6 +70,7 @@ export class Select {
         }
       } else {
         this.$el.classList.add(DEFAULT_CLASSES.hide);
+        this.$selectList.className = DEFAULT_CLASSES.selectList
       }
   
       this.isAutoClose && document.addEventListener('mousemove', (e) => {
@@ -91,7 +92,13 @@ export class Select {
   };
   
   addFitClass = (e) => {
-  // TODO
+    const targetEl = e.target.closest(this.selector);
+    const distanceToBottom = window.innerHeight - (targetEl.offsetTop + targetEl.offsetHeight);
+    if (distanceToBottom < 200) {
+      this.$selectList.classList.add(DEFAULT_CLASSES.selectListToTop);
+    } else {
+      this.$selectList.classList.add(DEFAULT_CLASSES.selectListToBottom);
+    }
   }
 
   update = () => {

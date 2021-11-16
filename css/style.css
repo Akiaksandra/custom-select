@@ -38,7 +38,7 @@ body {
     background: #fff;
     box-shadow: 0 0 4px rgba(0, 0, 0, 0.2);
     border-radius: 10px;
-    max-height: 200px;
+    max-height: 0;
     overflow-x: hidden;
     overflow-y: auto;
     z-index: 100;
@@ -46,14 +46,27 @@ body {
     padding: 0;
     font-size: 14px;
     color: #424348;
+    transition: max-height 0.6s;
 }
 
 .select__list--to-top {
     bottom: 100%;
+    max-height: 200px;
 }
 
 .select__list--to-bottom {
     top: 100%;
+    max-height: 200px;
+}
+
+.select__list::-webkit-scrollbar {
+    width: 5px;
+    background-color: #FFFFFF;
+}
+
+.select__list::-webkit-scrollbar-thumb {
+    border-radius: 2px;
+    background-color: #d1d1d1;
 }
 
 .select__item {
