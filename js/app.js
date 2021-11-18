@@ -1,5 +1,6 @@
 import data from "./data/data.js";
-import { Select } from "./selects/select.js";
+import { Select } from "./Components/select.js";
+import displayTooltips from "./Components/tooltip.js";
 
 const singleSelect = new Select("#single-select", {
   data: data,
@@ -57,3 +58,5 @@ button.addEventListener("click", (e) => {
   console.log(multipleSelectWithAutocompleteSelected.selectedItems);
   console.groupEnd();
 });
+
+displayTooltips()

@@ -190,3 +190,27 @@ body {
     right: 10px;
     transform: translateY(-50%);
 }
+
+.test__container {
+    margin-top: 30px;
+    margin-left: 100px;
+    width: fit-content;
+}
+
+.test__element {
+    padding: 10px;
+    margin-bottom: 5px;
+    width: 100%;
+    border: 1px solid #424348;
+}
+
+.tooltip {
+    display: none;
+    position: fixed;
+    top:0;
+    left: 0;
+    background: #444;
+    color: #FFFFFF;
+    padding: 10px 20px;
+    z-index: 999;
+}
